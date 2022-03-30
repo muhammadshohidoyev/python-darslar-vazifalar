@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 20 11:34:55 2022
+
+@author: User
+"""
+
+# pip install googletrans==3.1.0a0
+from googletrans import Translator
+
+tarjimon = Translator()
+
+msg = 'Tarjima uchun so\'z kiriting (chiqib ketish uchun "q" deb yozing): '
+while True:
+    text = input(msg)
+    if text == "q":
+        break
+    else:
+        tarjima = tarjimon.translate(text, src="uz", dest="en")
+        print(tarjima.text)
